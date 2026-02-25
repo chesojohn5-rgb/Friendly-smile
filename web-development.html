@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development | A Friend With a Smile</title>
+  <meta name="description" content="High-performing web development services for businesses ready to scale online.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">Web experiences built to convert visitors into customers.</div>
+
+  <header>
+    <nav class="navbar container">
+      <a class="logo" href="index.html" aria-label="A Friend With a Smile home">
+        <img src="img/logo.jpg" alt="A Friend With a Smile logo">
+        <span>A Friend With a Smile</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <div class="section-heading">
+      <h1>Web Development</h1>
+      <p class="muted">Modern websites engineered for visibility, trust, and sales performance.</p>
+    </div>
+
+    <section class="service-image-slot">
+      <h2>Service Image</h2>
+      <img src="img/web.jpg.png" alt="Web development service showcase" loading="lazy">
+  
+    </section>
+
+    <section class="cards-3">
+      <article class="value-card">
+        <h3>Business Websites</h3>
+        <p>Professional company websites with clear messaging, fast performance, and mobile responsiveness.</p>
+      </article>
+      <article class="value-card">
+        <h3>Landing Pages</h3>
+        <p>Conversion-focused pages designed to capture leads and support ad campaigns.</p>
+      </article>
+      <article class="value-card">
+        <h3>Ongoing Support</h3>
+        <p>Reliable updates, maintenance, and feature improvements as your business grows.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="newsletter">
+        <div>
+          <h2>Ready for a stronger online presence?</h2>
+          <p>Launch a website that builds confidence and turns traffic into paying clients.</p>
+        </div>
+        <a class="btn btn-secondary" href="contact.html">Start Web Project</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>A Friend With a Smile</h3>
+        <p>Building practical digital platforms for growing brands.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="services.html">All Services</a> | <a href="loans.html">Loans</a> | <a href="graphics-design.html">Graphics</a></p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>Email: benjanmin12simpungwe@gmail.com</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Cheso Productions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    }
+  </script>
+</body>
+</html>

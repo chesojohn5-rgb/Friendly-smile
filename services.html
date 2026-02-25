@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | A Friend With a Smile</title>
+  <meta name="description" content="Explore our professional services in graphic design and web development.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">Need branded visuals or a business website? We build both.</div>
+
+  <header>
+    <nav class="navbar container">
+      <a class="logo" href="index.html" aria-label="A Friend With a Smile home">
+        <img src="img/logo.jpg" alt="A Friend With a Smile logo">
+        <span>A Friend With a Smile</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section container">
+      <div class="product-tabs service-tabs" aria-label="Service pages">
+        <a class="btn btn-secondary" href="loans.html">Loans</a>
+        <a class="btn btn-secondary" href="graphics-design.html">Graphics Design</a>
+        <a class="btn btn-secondary" href="web-development.html">Web Development</a>
+        <a class="btn btn-secondary" href="hair-dressing.html">Hair Dressing</a>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">BUSINESS SERVICES</p>
+          <h1>Grow your brand beyond fashion.</h1>
+          <p class="hero-text">We help businesses look credible and sell faster with premium graphic design and conversion-focused web development.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">Request a Quote</a>
+            <a class="btn btn-secondary" href="#service-list">See Services</a>
+          </div>
+          <div class="stats">
+            <div><strong>48hrs</strong><span>Fast concept delivery</span></div>
+            <div><strong>Mobile-First</strong><span>Responsive web builds</span></div>
+            <div><strong>Brand-Ready</strong><span>Assets that convert</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="img/web.jpg.png" alt="Creative services showcase">
+          <p>Strategic design and web solutions tailored for growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="service-list">
+      <div class="section-heading">
+        <h2>Our Core Services</h2>
+        <p class="muted">Built for startups, growing brands, and established businesses.</p>
+      </div>
+
+      <div class="cards-3">
+        <article class="value-card">
+          <h3>Graphic Design</h3>
+          <p>Professional visuals that make your brand instantly recognizable across print and digital channels.</p>
+          <p class="muted">Logos, flyers, social media kits, business cards, and promotional campaign assets.</p>
+        </article>
+
+        <article class="value-card">
+          <h3>Web Development</h3>
+          <p>Modern, responsive websites built to showcase your products, capture leads, and drive more sales.</p>
+          <p class="muted">Business websites, landing pages, product catalogs, and contact-ready inquiry forms.</p>
+        </article>
+
+        <article class="value-card">
+          <h3>Launch Support</h3>
+          <p>We combine design and web execution so your brand launches with a clear, polished, and trusted presence.</p>
+          <p class="muted">Unified visual identity, consistent messaging, and a smooth customer experience.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container trust-grid">
+        <article>
+          <h3>Why Work With Us</h3>
+          <p>We focus on strategy, not just aesthetics, so every design and page supports your business goals.</p>
+        </article>
+        <article>
+          <h3>Results-Oriented Process</h3>
+          <p>Clear timelines, regular updates, and practical revisions that keep your project moving quickly.</p>
+        </article>
+        <article>
+          <h3>Built to Scale</h3>
+          <p>Our systems are flexible, making it easy to add features, pages, and new campaigns as you grow.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="newsletter">
+        <div>
+          <h2>Ready to elevate your business?</h2>
+          <p>Tell us your idea and get a tailored service plan for your brand.</p>
+        </div>
+        <a class="btn btn-secondary" href="contact.html">Start Your Project</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>A Friend With a Smile</h3>
+        <p>Creative solutions that help your brand look sharp and grow faster.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <p><a href="products.html">Products</a> | <a href="services.html">Services</a> | <a href="contact.html">Contact</a></p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>Email: benjanmin12simpungwe@gmail.com</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Cheso Productions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    }
+  </script>
+</body>
+</html>

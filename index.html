@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Friend With a Smile | Modern Clothing Brand</title>
+  <meta name="description" content="Shop quality fashion essentials from A Friend With a Smile. Stylish, affordable, and made for everyday confidence.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">Free delivery in selected Kabwe areas on orders above K400.</div>
+
+  <header>  
+    <nav class="navbar container">
+      <a class="logo" href="index.html" aria-label="A Friend With a Smile home">
+        <img src="img/logo.jpg" alt="A Friend With a Smile logo">
+        <span>A Friend With a Smile</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">2026 COLLECTION</p>
+          <h1>Wear confidence every day.</h1>
+          <p class="hero-text">From signature dresses to everyday sneakers, we design accessible fashion for people who want quality, comfort, and style.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="products.html">Shop Now</a>
+            <a class="btn btn-secondary" href="about.html">Our Story</a>
+          </div>
+          <div class="stats">
+            <div><strong>100+</strong><span>Happy Customers</span></div>
+            <div><strong>50+</strong><span>New Arrivals Monthly</span></div>
+            <div><strong>4.8/5</strong><span>Average Rating</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="img/ladybags.jpg.jpg" alt="Featured bag collection">
+          <p>New arrivals updated every week.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-heading">
+        <h2>Featured Categories</h2>
+        <a href="products.html">View all products</a>
+      </div>
+      <div class="cards-3">
+        <article class="feature-card">
+          <img src="img/dress.jpg.jpg" alt="Women's dresses">
+          <h3>Dresses</h3>
+          <p>Elegant, breathable, and made to stand out.</p>
+        </article>
+        <article class="feature-card">
+          <img src="img/shirts.jpg.jpg" alt="Casual shirts">
+          <h3>Shirts</h3>
+          <p>Tailored fits for work, events, and weekends.</p>
+        </article>
+        <article class="feature-card">
+          <img src="img/shoes.jpg" alt="Sneakers and shoes">
+          <h3>Footwear</h3>
+          <p>Comfort-first shoes for all-day movement.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container trust-grid">
+        <article>
+          <h3>Quality Materials</h3>
+          <p>We source durable fabrics and test fit before every release.</p>
+        </article>
+        <article>
+          <h3>Local Support</h3>
+          <p>Our team helps you with sizing, delivery, and order updates quickly.</p>
+        </article>
+        <article>
+          <h3>Secure Payments</h3>
+          <p>Pay through trusted methods and receive confirmation right away.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="newsletter">
+        <div>
+          <h2>Get style updates first</h2>
+          <p>Join our mailing list for launch alerts and weekly offers.</p>
+        </div>
+        <form class="newsletter-form">
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>A Friend With a Smile</h3>
+        <p>Affordable fashion built for confidence, comfort, and everyday style.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="products.html">Products</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email:benjanmin12simpungwe@gmail.com </p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Cheso Productions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    }
+  </script>
+</body>
+</html>
+
+

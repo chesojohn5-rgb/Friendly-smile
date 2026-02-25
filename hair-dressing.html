@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hair Dressing | A Friend With a Smile</title>
+  <meta name="description" content="Professional hair dressing services for everyday confidence and special occasions.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">Style, confidence, and care for every hair type.</div>
+
+  <header>
+    <nav class="navbar container">
+      <a class="logo" href="index.html" aria-label="A Friend With a Smile home">
+        <img src="img/logo.jpg" alt="A Friend With a Smile logo">
+        <span>A Friend With a Smile</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <div class="section-heading">
+      <h1>Hair Dressing</h1>
+      <p class="muted">Professional styling services that keep you looking sharp every day.</p>
+    </div>
+
+    <section class="service-image-slot">
+      <h2>Service Image</h2>
+      <img src="img/Hair.jpg.jpg" alt="Hair dressing service showcase" loading="lazy">
+      
+    </section>
+
+    <section class="cards-3">
+      <article class="value-card">
+        <h3>Hair Styling</h3>
+        <p>Custom styles for casual, corporate, and special events with a polished finish.</p>
+      </article>
+      
+
+    <section class="section">
+      <div class="newsletter">
+        <div>
+          <h2>Book your hair session</h2>
+          <p>Reserve your preferred date and let our team craft the perfect look for you.</p>
+        </div>
+        <a class="btn btn-secondary" href="contact.html">Book Appointment</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>A Friend With a Smile</h3>
+        <p>Creative services that help you look and feel your best.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="services.html">All Services</a> | <a href="loans.html">Loans</a> | <a href="graphics-design.html">Graphics</a></p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>Email: FriendWithASmile56@gmail.com</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Cheso Productions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    }
+  </script>
+</body>
+</html>

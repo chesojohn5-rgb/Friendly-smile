@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loans | A Friend With a Smile</title>
+  <meta name="description" content="Flexible loan solutions for personal and small business growth.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">Flexible funding support for your next big move.</div>
+
+  <header>
+    <nav class="navbar container">
+      <a class="logo" href="index.html" aria-label="A Friend With a Smile home">
+        <img src="img/logo.jpg" alt="A Friend With a Smile logo">
+        <span>A Friend With a Smile</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <div class="section-heading">
+      <h1>Loans</h1>
+      <p class="muted">Practical financing options designed for real business and personal needs.</p>
+    </div>
+
+    <section class="service-image-slot">
+      <h2>Service Image</h2>
+      <img src="img/loan.jpg.jpg" alt="Loans service showcase" loading="lazy">
+
+    </section>
+
+    <section class="cards-3">
+      <article class="value-card">
+        <h3>Civil Servant Loans</h3>
+        <p>Get capital to launch inventory, equipment, or your first business operations confidently.</p>
+      </article>
+      <article class="value-card">
+        <h3>Working Capital</h3>
+        <p>Bridge cash flow gaps and keep operations steady during growth periods.</p>
+      </article>
+      <article class="value-card">
+        <h3>Personal Support</h3>
+        <p>Access quick financial support for urgent needs with clear repayment terms.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="newsletter">
+        <div>
+          <h2>Need a loan consultation?</h2>
+          <p>Speak with our team and get guidance on the best option for your situation.</p>
+        </div>
+        <a class="btn btn-secondary" href="contact.html">Talk to Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>A Friend With a Smile</h3>
+        <p>Helping businesses and individuals move forward with confidence.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="services.html">All Services</a> | <a href="graphics-design.html">Graphics</a> | <a href="web-development.html">Web</a></p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>Email: benjanmin12simpungwe@gmail.com</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Cheso Productions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    }
+  </script>
+</body>
+</html>

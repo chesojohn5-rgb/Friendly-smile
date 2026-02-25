@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphics Design | A Friend With a Smile</title>
+  <meta name="description" content="Professional graphic design services for branding, promotion, and digital growth.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">Design that captures attention and builds trust.</div>
+
+  <header>
+    <nav class="navbar container">
+      <a class="logo" href="index.html" aria-label="A Friend With a Smile home">
+        <img src="img/logo.jpg" alt="A Friend With a Smile logo">
+        <span>A Friend With a Smile</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <div class="section-heading">
+      <h1>Graphics Design</h1>
+      <p class="muted">Creative visuals that make your brand memorable and market-ready.</p>
+    </div>
+
+    <section class="service-image-slot">
+      <h2>Service Image</h2>
+      <img src="img/ben.jpg.png" alt="Graphics design service showcase" loading="lazy">
+
+    </section>
+
+    <section class="cards-3">
+      <article class="value-card">
+        <h3>Brand Identity</h3>
+        <p>Logo systems, brand colors, and visual guidelines that create consistency everywhere.</p>
+      </article>
+      <article class="value-card">
+        <h3>Marketing Assets</h3>
+        <p>Flyers, posters, social media creatives, and ad designs built to increase engagement.</p>
+      </article>
+      <article class="value-card">
+        <h3>Business Materials</h3>
+        <p>Business cards, brochures, and pitch visuals that present your brand professionally.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="newsletter">
+        <div>
+          <h2>Need standout visuals?</h2>
+          <p>Let us design assets that make your products and campaigns impossible to ignore.</p>
+        </div>
+        <a class="btn btn-secondary" href="contact.html">Request Design Service</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>A Friend With a Smile</h3>
+        <p>Design and strategy that move your brand forward.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="services.html">All Services</a> | <a href="loans.html">Loans</a> | <a href="web-development.html">Web</a></p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>Email: benjanmin12simpungwe@gmail.com</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Cheso Productions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    }
+  </script>
+</body>
+</html>
