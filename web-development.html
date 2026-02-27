@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Development | A Friend With a Smile</title>
-  <meta name="description" content="High-performing web development services for businesses ready to scale online.">
+  <meta id="meta-description" name="description" content="High-performing web development services for businesses ready to scale online.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="announcement">Web experiences built to convert visitors into customers.</div>
+  <div class="announcement" data-i18n="announcement">Web experiences built to convert visitors into customers.</div>
 
   <header>
     <nav class="navbar container">
@@ -18,49 +18,54 @@
       </a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-i18n="navHome">Home</a></li>
+        <li><a href="products.html" data-i18n="navProducts">Products</a></li>
+        <li><a href="about.html" data-i18n="navAbout">About</a></li>
+        <li><a href="services.html" class="active" data-i18n="navServices">Services</a></li>
+        <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
       </ul>
+      <select id="language-select" aria-label="Language selector">
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="fr">FR</option>
+      </select>
     </nav>
   </header>
 
   <main class="section container">
     <div class="section-heading">
-      <h1>Web Development</h1>
-      <p class="muted">Modern websites engineered for visibility, trust, and sales performance.</p>
+      <h1 data-i18n="pageHeading">Web Development</h1>
+      <p class="muted" data-i18n="pageSubtitle">Modern websites engineered for visibility, trust, and sales performance.</p>
     </div>
 
     <section class="service-image-slot">
-      <h2>Service Image</h2>
+      <h2 data-i18n="serviceImage">Service Image</h2>
       <img src="img/web.jpg.png" alt="Web development service showcase" loading="lazy">
   
     </section>
 
     <section class="cards-3">
       <article class="value-card">
-        <h3>Business Websites</h3>
-        <p>Professional company websites with clear messaging, fast performance, and mobile responsiveness.</p>
+        <h3 data-i18n="businessWebsites">Business Websites</h3>
+        <p data-i18n="businessWebsitesText">Professional company websites with clear messaging, fast performance, and mobile responsiveness.</p>
       </article>
       <article class="value-card">
-        <h3>Landing Pages</h3>
-        <p>Conversion-focused pages designed to capture leads and support ad campaigns.</p>
+        <h3 data-i18n="landingPages">Landing Pages</h3>
+        <p data-i18n="landingPagesText">Conversion-focused pages designed to capture leads and support ad campaigns.</p>
       </article>
       <article class="value-card">
-        <h3>Ongoing Support</h3>
-        <p>Reliable updates, maintenance, and feature improvements as your business grows.</p>
+        <h3 data-i18n="ongoingSupport">Ongoing Support</h3>
+        <p data-i18n="ongoingSupportText">Reliable updates, maintenance, and feature improvements as your business grows.</p>
       </article>
     </section>
 
     <section class="section">
       <div class="newsletter">
         <div>
-          <h2>Ready for a stronger online presence?</h2>
-          <p>Launch a website that builds confidence and turns traffic into paying clients.</p>
+          <h2 data-i18n="ctaTitle">Ready for a stronger online presence?</h2>
+          <p data-i18n="ctaText">Launch a website that builds confidence and turns traffic into paying clients.</p>
         </div>
-        <a class="btn btn-secondary" href="contact.html">Start Web Project</a>
+        <a class="btn btn-secondary" href="contact.html" data-i18n="startProject">Start Web Project</a>
       </div>
     </section>
   </main>
@@ -69,14 +74,14 @@
     <div class="container footer-grid">
       <div>
         <h3>A Friend With a Smile</h3>
-        <p>Building practical digital platforms for growing brands.</p>
+        <p data-i18n="footerText">Building practical digital platforms for growing brands.</p>
       </div>
       <div>
-        <h4>Services</h4>
-        <p><a href="services.html">All Services</a> | <a href="loans.html">Loans</a> | <a href="graphics-design.html">Graphics</a></p>
+        <h4 data-i18n="navServices">Services</h4>
+        <p><a href="services.html" data-i18n="allServices">All Services</a> | <a href="loans.html" data-i18n="loans">Loans</a> | <a href="graphics-design.html" data-i18n="graphics">Graphics</a></p>
       </div>
       <div>
-        <h4>Support</h4>
+        <h4 data-i18n="support">Support</h4>
         <p>Email: benjanmin12simpungwe@gmail.com</p>
       </div>
     </div>
@@ -86,12 +91,129 @@
   <script>
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
+    const languageSelect = document.getElementById("language-select");
+    const metaDescription = document.getElementById("meta-description");
+
+    const translations = {
+      en: {
+        pageTitle: "Web Development | A Friend With a Smile",
+        metaDescription: "High-performing web development services for businesses ready to scale online.",
+        announcement: "Web experiences built to convert visitors into customers.",
+        navHome: "Home",
+        navProducts: "Products",
+        navAbout: "About",
+        navServices: "Services",
+        navContact: "Contact",
+        pageHeading: "Web Development",
+        pageSubtitle: "Modern websites engineered for visibility, trust, and sales performance.",
+        serviceImage: "Service Image",
+        businessWebsites: "Business Websites",
+        businessWebsitesText: "Professional company websites with clear messaging, fast performance, and mobile responsiveness.",
+        landingPages: "Landing Pages",
+        landingPagesText: "Conversion-focused pages designed to capture leads and support ad campaigns.",
+        ongoingSupport: "Ongoing Support",
+        ongoingSupportText: "Reliable updates, maintenance, and feature improvements as your business grows.",
+        ctaTitle: "Ready for a stronger online presence?",
+        ctaText: "Launch a website that builds confidence and turns traffic into paying clients.",
+        startProject: "Start Web Project",
+        footerText: "Building practical digital platforms for growing brands.",
+        allServices: "All Services",
+        loans: "Loans",
+        graphics: "Graphics",
+        support: "Support"
+      },
+      es: {
+        pageTitle: "Desarrollo Web | A Friend With a Smile",
+        metaDescription: "Servicios de desarrollo web de alto rendimiento para empresas listas para crecer en linea.",
+        announcement: "Experiencias web creadas para convertir visitantes en clientes.",
+        navHome: "Inicio",
+        navProducts: "Productos",
+        navAbout: "Nosotros",
+        navServices: "Servicios",
+        navContact: "Contacto",
+        pageHeading: "Desarrollo web",
+        pageSubtitle: "Sitios modernos creados para visibilidad, confianza y rendimiento en ventas.",
+        serviceImage: "Imagen del servicio",
+        businessWebsites: "Sitios empresariales",
+        businessWebsitesText: "Sitios profesionales con mensajes claros, velocidad y respuesta movil.",
+        landingPages: "Paginas de aterrizaje",
+        landingPagesText: "Paginas orientadas a conversion para captar clientes potenciales y apoyar campanas.",
+        ongoingSupport: "Soporte continuo",
+        ongoingSupportText: "Actualizaciones, mantenimiento y mejoras confiables mientras crece tu negocio.",
+        ctaTitle: "Listo para una presencia online mas fuerte?",
+        ctaText: "Lanza un sitio que genere confianza y convierta visitas en clientes de pago.",
+        startProject: "Iniciar proyecto web",
+        footerText: "Construimos plataformas digitales practicas para marcas en crecimiento.",
+        allServices: "Todos los servicios",
+        loans: "Prestamos",
+        graphics: "Diseno grafico",
+        support: "Soporte"
+      },
+      fr: {
+        pageTitle: "Developpement Web | A Friend With a Smile",
+        metaDescription: "Services de developpement web performants pour les entreprises qui veulent evoluer en ligne.",
+        announcement: "Des experiences web concues pour convertir les visiteurs en clients.",
+        navHome: "Accueil",
+        navProducts: "Produits",
+        navAbout: "A propos",
+        navServices: "Services",
+        navContact: "Contact",
+        pageHeading: "Developpement web",
+        pageSubtitle: "Des sites modernes concus pour la visibilite, la confiance et la performance commerciale.",
+        serviceImage: "Image du service",
+        businessWebsites: "Sites d entreprise",
+        businessWebsitesText: "Sites professionnels avec message clair, rapidite et adaptation mobile.",
+        landingPages: "Pages d atterrissage",
+        landingPagesText: "Pages axees conversion pour capturer des prospects et soutenir les campagnes publicitaires.",
+        ongoingSupport: "Support continu",
+        ongoingSupportText: "Mises a jour, maintenance et evolutions fiables au rythme de votre croissance.",
+        ctaTitle: "Pret pour une presence en ligne plus forte ?",
+        ctaText: "Lancez un site qui inspire confiance et transforme le trafic en clients payants.",
+        startProject: "Demarrer un projet web",
+        footerText: "Nous construisons des plateformes numeriques pratiques pour les marques en croissance.",
+        allServices: "Tous les services",
+        loans: "Prets",
+        graphics: "Graphisme",
+        support: "Support"
+      }
+    };
+
+    function applyLanguage(language) {
+      const selected = translations[language] ? language : "en";
+      const content = translations[selected];
+
+      document.documentElement.lang = selected;
+      document.title = content.pageTitle;
+      if (metaDescription) {
+        metaDescription.setAttribute("content", content.metaDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (content[key]) {
+          element.textContent = content[key];
+        }
+      });
+
+      if (languageSelect) {
+        languageSelect.value = selected;
+      }
+      localStorage.setItem("site-language", selected);
+    }
 
     if (menuToggle && navLinks) {
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("show");
       });
     }
+
+    if (languageSelect) {
+      languageSelect.addEventListener("change", (event) => {
+        applyLanguage(event.target.value);
+      });
+    }
+
+    applyLanguage(localStorage.getItem("site-language") || "en");
   </script>
 </body>
 </html>

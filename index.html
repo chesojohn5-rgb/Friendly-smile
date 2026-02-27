@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A Friend With a Smiley | Where Fashion meets Finance and Innovation</title>
-  <meta name="description" content="Shop quality fashion essentials from A Friend With a Smile. Stylish, affordable, and made for everyday confidence.">
+  <meta id="meta-description" name="description" content="Shop quality fashion essentials from A Friend With a Smile. Stylish, affordable, and made for everyday confidence.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="announcement">Free delivery in selected Kabwe areas .</div>
+  <div class="announcement" data-i18n="announcement">Free delivery in selected Kabwe areas .</div>
 
   <header>  
     <nav class="navbar container">
@@ -18,12 +18,17 @@
       </a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" class="active" data-i18n="navHome">Home</a></li>
+        <li><a href="products.html" data-i18n="navProducts">Products</a></li>
+        <li><a href="about.html" data-i18n="navAbout">About</a></li>
+        <li><a href="services.html" data-i18n="navServices">Services</a></li>
+        <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
       </ul>
+      <select id="language-select" aria-label="Language selector">
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="fr">FR</option>
+      </select>
     </nav>
   </header>
 
@@ -31,46 +36,46 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">2026 COLLECTION</p>
-          <h1>Made for Your Style, Finance and Digital Solutions.</h1>
-          <p class="hero-text"> Hermonize the melody of innovation, season it with flavors of diversity, clothe it in creativity, educate it with passion, fuel it with sportsmanship, and serve it with love- thats the recipe for business success </p>
+          <p class="eyebrow" data-i18n="eyebrow">2026 COLLECTION</p>
+          <h1 data-i18n="heroTitle">Made for Your Style, Finance and Digital Solutions.</h1>
+          <p class="hero-text" data-i18n="heroText"> Hermonize the melody of innovation, season it with flavors of diversity, clothe it in creativity, educate it with passion, fuel it with sportsmanship, and serve it with love- thats the recipe for business success </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="products.html">Shop Now</a>
-            <a class="btn btn-secondary" href="about.html">Our Story</a>
+            <a class="btn btn-primary" href="products.html" data-i18n="shopNow">Shop Now</a>
+            <a class="btn btn-secondary" href="about.html" data-i18n="ourStory">Our Story</a>
           </div>
           <div class="stats">
-            <div><strong>100+</strong><span>Happy Customers</span></div>
-            <div><strong>50+</strong><span>New Arrivals Monthly</span></div>
+            <div><strong>100+</strong><span data-i18n="statCustomers">Happy Customers</span></div>
+            <div><strong>50+</strong><span data-i18n="statArrivals">New Arrivals Monthly</span></div>
       
           </div>
         </div>
         <div class="hero-card">
           <img src="img/ladybags.jpg.jpg" alt="Featured bag collection">
-          <p>New arrivals updated every week.</p>
+          <p data-i18n="heroCardText">New arrivals updated every week.</p>
         </div>
       </div>
     </section>
 
     <section class="section container">
       <div class="section-heading">
-        <h2>Featured Categories</h2>
-        <a href="products.html">View all products</a>
+        <h2 data-i18n="featuredCategories">Featured Categories</h2>
+        <a href="products.html" data-i18n="viewAllProducts">View all products</a>
       </div>
       <div class="cards-3">
         <article class="feature-card">
           <img src="img/dress.jpg.jpg" alt="Women's dresses">
-          <h3>Dresses</h3>
-          <p>Elegant, breathable, and made to stand out.</p>
+          <h3 data-i18n="dresses">Dresses</h3>
+          <p data-i18n="dressesText">Elegant, breathable, and made to stand out.</p>
         </article>
         <article class="feature-card">
           <img src="img/shirts.jpg.jpg" alt="Casual shirts">
-          <h3>Shirts</h3>
-          <p>Tailored fits for work, events, and weekends.</p>
+          <h3 data-i18n="shirts">Shirts</h3>
+          <p data-i18n="shirtsText">Tailored fits for work, events, and weekends.</p>
         </article>
         <article class="feature-card">
           <img src="img/shoes.jpg" alt="Sneakers and shoes">
-          <h3>Footwear</h3>
-          <p>Comfort-first shoes for all-day movement.</p>
+          <h3 data-i18n="footwear">Footwear</h3>
+          <p data-i18n="footwearText">Comfort-first shoes for all-day movement.</p>
         </article>
       </div>
     </section>
@@ -78,16 +83,16 @@
     <section class="section section-alt">
       <div class="container trust-grid">
         <article>
-          <h3>Quality Materials</h3>
-          <p>We source durable fabrics and test fit before every release.</p>
+          <h3 data-i18n="qualityMaterials">Quality Materials</h3>
+          <p data-i18n="qualityMaterialsText">We source durable fabrics and test fit before every release.</p>
         </article>
         <article>
-          <h3>Local Support</h3>
-          <p>Our team helps you with sizing, delivery, and order updates quickly.</p>
+          <h3 data-i18n="localSupport">Local Support</h3>
+          <p data-i18n="localSupportText">Our team helps you with sizing, delivery, and order updates quickly.</p>
         </article>
         <article>
-          <h3>Secure Payments</h3>
-          <p>Pay through trusted methods and receive confirmation right away.</p>
+          <h3 data-i18n="securePayments">Secure Payments</h3>
+          <p data-i18n="securePaymentsText">Pay through trusted methods and receive confirmation right away.</p>
         </article>
       </div>
     </section>
@@ -95,13 +100,13 @@
     <section class="section container">
       <div class="newsletter">
         <div>
-          <h2>Get style updates first</h2>
-          <p>Join our mailing list for launch alerts and weekly offers.</p>
+          <h2 data-i18n="newsletterTitle">Get style updates first</h2>
+          <p data-i18n="newsletterText">Join our mailing list for launch alerts and weekly offers.</p>
         </div>
         <form class="newsletter-form">
-          <label class="sr-only" for="email">Email address</label>
-          <input id="email" type="email" placeholder="Enter your email" required>
-          <button type="submit">Subscribe</button>
+          <label class="sr-only" for="email" data-i18n="emailAddress">Email address</label>
+          <input id="email" type="email" placeholder="Enter your email" data-i18n-placeholder="emailPlaceholder" required>
+          <button type="submit" data-i18n="subscribe">Subscribe</button>
         </form>
       </div>
     </section>
@@ -111,14 +116,14 @@
     <div class="container footer-grid">
       <div>
         <h3>A Friend With a Smile</h3>
-        <p>Affordable fashion built for confidence, comfort, and everyday style.</p>
+        <p data-i18n="footerText">Affordable fashion built for confidence, comfort, and everyday style.</p>
       </div>
       <div>
-        <h4>Quick Links</h4>
-        <p><a href="products.html">Products</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a></p>
+        <h4 data-i18n="quickLinks">Quick Links</h4>
+        <p><a href="products.html" data-i18n="navProducts">Products</a> | <a href="about.html" data-i18n="navAbout">About</a> | <a href="contact.html" data-i18n="navContact">Contact</a></p>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h4 data-i18n="navContact">Contact</h4>
         <p>Email:benjanmin12simpungwe@gmail.com </p>
       </div>
     </div>
@@ -128,12 +133,172 @@
   <script>
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
+    const languageSelect = document.getElementById("language-select");
+    const metaDescription = document.getElementById("meta-description");
+
+    const translations = {
+      en: {
+        pageTitle: "A Friend With a Smiley | Where Fashion meets Finance and Innovation",
+        metaDescription: "Shop quality fashion essentials from A Friend With a Smile. Stylish, affordable, and made for everyday confidence.",
+        announcement: "Free delivery in selected Kabwe areas .",
+        navHome: "Home",
+        navProducts: "Products",
+        navAbout: "About",
+        navServices: "Services",
+        navContact: "Contact",
+        eyebrow: "2026 COLLECTION",
+        heroTitle: "Made for Your Style, Finance and Digital Solutions.",
+        heroText: "Hermonize the melody of innovation, season it with flavors of diversity, clothe it in creativity, educate it with passion, fuel it with sportsmanship, and serve it with love- thats the recipe for business success",
+        shopNow: "Shop Now",
+        ourStory: "Our Story",
+        statCustomers: "Happy Customers",
+        statArrivals: "New Arrivals Monthly",
+        heroCardText: "New arrivals updated every week.",
+        featuredCategories: "Featured Categories",
+        viewAllProducts: "View all products",
+        dresses: "Dresses",
+        dressesText: "Elegant, breathable, and made to stand out.",
+        shirts: "Shirts",
+        shirtsText: "Tailored fits for work, events, and weekends.",
+        footwear: "Footwear",
+        footwearText: "Comfort-first shoes for all-day movement.",
+        qualityMaterials: "Quality Materials",
+        qualityMaterialsText: "We source durable fabrics and test fit before every release.",
+        localSupport: "Local Support",
+        localSupportText: "Our team helps you with sizing, delivery, and order updates quickly.",
+        securePayments: "Secure Payments",
+        securePaymentsText: "Pay through trusted methods and receive confirmation right away.",
+        newsletterTitle: "Get style updates first",
+        newsletterText: "Join our mailing list for launch alerts and weekly offers.",
+        emailAddress: "Email address",
+        emailPlaceholder: "Enter your email",
+        subscribe: "Subscribe",
+        footerText: "Affordable fashion built for confidence, comfort, and everyday style.",
+        quickLinks: "Quick Links"
+      },
+      es: {
+        pageTitle: "A Friend With a Smiley | Donde la moda se une con las finanzas y la innovacion",
+        metaDescription: "Compra moda de calidad en A Friend With a Smile. Estilo, precio accesible y confianza para cada dia.",
+        announcement: "Entrega gratuita en zonas seleccionadas de Kabwe.",
+        navHome: "Inicio",
+        navProducts: "Productos",
+        navAbout: "Nosotros",
+        navServices: "Servicios",
+        navContact: "Contacto",
+        eyebrow: "COLECCION 2026",
+        heroTitle: "Hecho para tu estilo, finanzas y soluciones digitales.",
+        heroText: "Armoniza la melodia de la innovacion, sazona con diversidad, vistela con creatividad, educala con pasion, impulsa con deporte y sirvela con amor: esa es la receta del exito empresarial.",
+        shopNow: "Comprar ahora",
+        ourStory: "Nuestra historia",
+        statCustomers: "Clientes felices",
+        statArrivals: "Nuevos productos cada mes",
+        heroCardText: "Nuevos productos cada semana.",
+        featuredCategories: "Categorias destacadas",
+        viewAllProducts: "Ver todos los productos",
+        dresses: "Vestidos",
+        dressesText: "Elegantes, frescos y hechos para destacar.",
+        shirts: "Camisas",
+        shirtsText: "Cortes a medida para trabajo, eventos y fines de semana.",
+        footwear: "Calzado",
+        footwearText: "Comodidad primero para moverte todo el dia.",
+        qualityMaterials: "Materiales de calidad",
+        qualityMaterialsText: "Usamos telas duraderas y probamos el ajuste antes de cada lanzamiento.",
+        localSupport: "Soporte local",
+        localSupportText: "Nuestro equipo te ayuda rapido con tallas, entrega y actualizaciones de pedidos.",
+        securePayments: "Pagos seguros",
+        securePaymentsText: "Paga con metodos confiables y recibe confirmacion al instante.",
+        newsletterTitle: "Recibe primero las novedades",
+        newsletterText: "Unete a nuestra lista para lanzamientos y ofertas semanales.",
+        emailAddress: "Correo electronico",
+        emailPlaceholder: "Ingresa tu correo",
+        subscribe: "Suscribirse",
+        footerText: "Moda accesible creada para confianza, comodidad y estilo diario.",
+        quickLinks: "Enlaces rapidos"
+      },
+      fr: {
+        pageTitle: "A Friend With a Smiley | Ou la mode rencontre la finance et l innovation",
+        metaDescription: "Achetez des essentiels de mode de qualite chez A Friend With a Smile. Elegants, abordables et faits pour la confiance au quotidien.",
+        announcement: "Livraison gratuite dans certaines zones de Kabwe.",
+        navHome: "Accueil",
+        navProducts: "Produits",
+        navAbout: "A propos",
+        navServices: "Services",
+        navContact: "Contact",
+        eyebrow: "COLLECTION 2026",
+        heroTitle: "Concu pour votre style, la finance et les solutions numeriques.",
+        heroText: "Harmonisez la melodie de l innovation, ajoutez la diversite, habillez-la de creativite, eduquez-la avec passion, alimentez-la par l esprit sportif et servez-la avec amour : voila la recette du succes.",
+        shopNow: "Acheter",
+        ourStory: "Notre histoire",
+        statCustomers: "Clients satisfaits",
+        statArrivals: "Nouveautes chaque mois",
+        heroCardText: "Nouveautes mises a jour chaque semaine.",
+        featuredCategories: "Categories en vedette",
+        viewAllProducts: "Voir tous les produits",
+        dresses: "Robes",
+        dressesText: "Elegantes, respirantes et faites pour se demarquer.",
+        shirts: "Chemises",
+        shirtsText: "Coupes ajustees pour le travail, les evenements et le week-end.",
+        footwear: "Chaussures",
+        footwearText: "Le confort d abord pour bouger toute la journee.",
+        qualityMaterials: "Materiaux de qualite",
+        qualityMaterialsText: "Nous choisissons des tissus durables et testons la coupe avant chaque sortie.",
+        localSupport: "Support local",
+        localSupportText: "Notre equipe vous aide rapidement pour les tailles, la livraison et les commandes.",
+        securePayments: "Paiements securises",
+        securePaymentsText: "Payez via des methodes fiables et recevez une confirmation immediate.",
+        newsletterTitle: "Recevez les nouveautes en premier",
+        newsletterText: "Inscrivez-vous pour les lancements et offres hebdomadaires.",
+        emailAddress: "Adresse e-mail",
+        emailPlaceholder: "Entrez votre e-mail",
+        subscribe: "S inscrire",
+        footerText: "Une mode abordable pour la confiance, le confort et le style quotidien.",
+        quickLinks: "Liens rapides"
+      }
+    };
+
+    function applyLanguage(language) {
+      const selected = translations[language] ? language : "en";
+      const content = translations[selected];
+
+      document.documentElement.lang = selected;
+      document.title = content.pageTitle;
+      if (metaDescription) {
+        metaDescription.setAttribute("content", content.metaDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (content[key]) {
+          element.textContent = content[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (content[key]) {
+          element.setAttribute("placeholder", content[key]);
+        }
+      });
+
+      if (languageSelect) {
+        languageSelect.value = selected;
+      }
+      localStorage.setItem("site-language", selected);
+    }
 
     if (menuToggle && navLinks) {
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("show");
       });
     }
+
+    if (languageSelect) {
+      languageSelect.addEventListener("change", (event) => {
+        applyLanguage(event.target.value);
+      });
+    }
+
+    applyLanguage(localStorage.getItem("site-language") || "en");
   </script>
 </body>
 </html>
