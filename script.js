@@ -1,8 +1,5 @@
 // ===== CONFIG =====
 
-// For LOCAL testing (when running node server.js)
-const LOCAL_URL = "http://localhost:3000/pay"
-
 // For LIVE backend (change this after deployment)
 const LIVE_URL = "https://your-backend-url.onrender.com/pay"
 
