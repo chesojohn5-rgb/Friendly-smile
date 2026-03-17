@@ -44,3 +44,25 @@ async function payNow() {
   }
 
 }
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const backToTop = document.getElementById("back-to-top");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    }
+
+    if (backToTop) {
+      const toggleBackToTop = () => {
+        backToTop.classList.toggle("show", window.scrollY > 320);
+      };
+
+      window.addEventListener("scroll", toggleBackToTop);
+      toggleBackToTop();
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
