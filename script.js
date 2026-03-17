@@ -1,19 +1,49 @@
+// ===== CONFIG =====
+
+// For LOCAL testing (when running node server.js)
+const LOCAL_URL = "http://localhost:3000/pay"
+
+// For LIVE backend (change this after deployment)
+const LIVE_URL = "https://your-backend-url.onrender.com/pay"
+
+// Switch between LOCAL and LIVE
+const USE_LIVE = false   // 👉 change to true when deployed
+
+// Select the correct URL
+const API_URL = USE_LIVE ? LIVE_URL : LOCAL_URL
+
+
+// ===== PAYMENT FUNCTION =====
+
 async function payNow() {
+
   try {
-    const response = await fetch("http://localhost:3000/pay", { // Step 9.3 explains the URL
+
+    const response = await fetch(API_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
-        amount: 200 // Replace with the amount you want to charge
+        amount: 200   // 💰 change this dynamically later
       })
-    });
+    })
 
-    const data = await response.json();
+    const data = await response.json()
 
-    // Redirect customer to Lenco checkout page
-    window.location.href = data.checkout_url;
+    if (data.checkout_url) {
+      // Redirect user to Lenco payment page
+      window.location.href = data.checkout_url
+    } else {
+      alert("Payment failed. No checkout URL received.")
+      console.log(data)
+    }
+
   } catch (error) {
-    console.error("Payment failed:", error);
-    alert("Payment failed. Please try again.");
+
+    console.error("Error:", error)
+    alert("Something went wrong. Try again.")
+
   }
+
 }
