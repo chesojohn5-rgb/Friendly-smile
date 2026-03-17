@@ -7,7 +7,7 @@ const LOCAL_URL = "http://localhost:3000/pay"
 const LIVE_URL = "https://your-backend-url.onrender.com/pay"
 
 // Switch between LOCAL and LIVE
-const USE_LIVE = false   // 👉 change to true when deployed
+const USE_LIVE = true   // 👉 change to true when deployed
 
 // Select the correct URL
 const API_URL = USE_LIVE ? LIVE_URL : LOCAL_URL
