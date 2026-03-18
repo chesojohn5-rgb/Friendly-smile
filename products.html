@@ -181,6 +181,45 @@
     </section>
   </main>
 
+  <div class="payment-modal" id="payment-modal" aria-hidden="true">
+    <div class="payment-modal__backdrop" data-modal-close></div>
+    <div class="payment-modal__card" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+      <button class="payment-modal__close" type="button" data-modal-close aria-label="Close payment form">&times;</button>
+      <h3 id="payment-title">Complete Your Payment</h3>
+      <p class="payment-modal__product">
+        <span id="payment-product">Item</span>
+        <span aria-hidden="true">•</span>
+        <span id="payment-amount">K0.00</span>
+      </p>
+      <form id="payment-form" class="payment-form">
+        <div class="payment-field">
+          <label for="pay-first-name">First Name</label>
+          <input id="pay-first-name" name="firstName" type="text" autocomplete="given-name" required>
+        </div>
+        <div class="payment-field">
+          <label for="pay-last-name">Last Name</label>
+          <input id="pay-last-name" name="lastName" type="text" autocomplete="family-name" required>
+        </div>
+        <div class="payment-field">
+          <label for="pay-email">Email</label>
+          <input id="pay-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="payment-field">
+          <label for="pay-phone">Mobile Money Number</label>
+          <input id="pay-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+        </div>
+        <div class="payment-field">
+          <label for="pay-network">Network</label>
+          <select id="pay-network" name="network" required>
+            <option value="airtel">Airtel Money</option>
+            <option value="mtn">MTN Money</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Pay Now</button>
+      </form>
+    </div>
+  </div>
+
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">&#8593;</button>
 
   <footer class="footer">

@@ -2,7 +2,7 @@
 
 const LENCO_PUBLIC_KEY = "pub-745f8f2bf396d94aa61027044bc30fb861a59a61de987f67"
 const LENCO_CURRENCY = "ZMW"
-const LENCO_CHANNELS = ["card", "mobile-money"]
+const LENCO_CHANNELS = ["mobile-money"]
 const LOCAL_BACKEND = "http://localhost:3000"
 const LIVE_BACKEND = "https://lenco-backend.onrender.com"
 const USE_LIVE_BACKEND = true
@@ -14,15 +14,8 @@ const generateReference = () => {
 }
 
 const isValidEmail = (value) => /\S+@\S+\.\S+/.test(value)
-
-const getCustomerEmail = () => {
-  const email = prompt("Enter your email to continue payment:")
-  if (!email || !isValidEmail(email)) {
-    alert("Please enter a valid email address.")
-    return null
-  }
-  return email.trim()
-}
+const normalizePhone = (value) => value.replace(/[^\d]/g, "")
+const isValidPhone = (value) => normalizePhone(value).length >= 7
 
 // ===== PAYMENT FUNCTION =====
 
@@ -45,7 +38,7 @@ const verifyPayment = async (reference) => {
   }
 }
 
-function payNow({ amount, product }) {
+function payNow({ amount, product, customer, networkLabel }) {
   if (!window.LencoPay) {
     alert("Lenco payment widget failed to load. Please refresh the page.")
     return
@@ -56,19 +49,21 @@ function payNow({ amount, product }) {
     return
   }
 
-  const email = getCustomerEmail()
-  if (!email) return
-
   const reference = generateReference()
 
   window.LencoPay.getPaid({
     key: LENCO_PUBLIC_KEY,
     reference,
-    email,
+    email: customer.email,
     amount,
     currency: LENCO_CURRENCY,
-    label: product || "Purchase",
+    label: `${product || "Purchase"} - ${networkLabel}`,
     channels: LENCO_CHANNELS,
+    customer: {
+      firstName: customer.firstName,
+      lastName: customer.lastName,
+      phone: customer.phone
+    },
     onSuccess: function (response) {
       const ref = response?.reference || reference
       alert(`Payment complete! Reference: ${ref}`)
@@ -83,6 +78,51 @@ function payNow({ amount, product }) {
   })
 }
 
+const paymentModal = document.getElementById("payment-modal")
+const paymentForm = document.getElementById("payment-form")
+const productNameEl = document.getElementById("payment-product")
+const amountEl = document.getElementById("payment-amount")
+const firstNameInput = document.getElementById("pay-first-name")
+const lastNameInput = document.getElementById("pay-last-name")
+const emailInput = document.getElementById("pay-email")
+const phoneInput = document.getElementById("pay-phone")
+const networkSelect = document.getElementById("pay-network")
+const closeButtons = document.querySelectorAll("[data-modal-close]")
+
+let pendingPayment = null
+
+const openPaymentModal = ({ amount, product }) => {
+  if (!paymentModal || !paymentForm) return
+
+  pendingPayment = { amount, product }
+  if (productNameEl) productNameEl.textContent = product
+  if (amountEl) amountEl.textContent = `K${Number(amount).toFixed(2)}`
+
+  paymentModal.classList.add("show")
+  paymentModal.setAttribute("aria-hidden", "false")
+  if (firstNameInput) {
+    firstNameInput.focus()
+  }
+}
+
+const closePaymentModal = () => {
+  if (!paymentModal || !paymentForm) return
+  paymentModal.classList.remove("show")
+  paymentModal.setAttribute("aria-hidden", "true")
+  paymentForm.reset()
+  pendingPayment = null
+}
+
+closeButtons.forEach((button) => {
+  button.addEventListener("click", closePaymentModal)
+})
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && paymentModal?.classList.contains("show")) {
+    closePaymentModal()
+  }
+})
+
 const payButtons = document.querySelectorAll(".pay-now")
 payButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -94,9 +134,59 @@ payButtons.forEach((button) => {
       return
     }
 
-    payNow({ amount, product })
+    openPaymentModal({ amount, product })
   })
 })
+
+if (paymentForm) {
+  paymentForm.addEventListener("submit", (event) => {
+    event.preventDefault()
+
+    if (!pendingPayment) {
+      alert("Missing payment details.")
+      return
+    }
+
+    const firstName = firstNameInput?.value.trim() || ""
+    const lastName = lastNameInput?.value.trim() || ""
+    const email = emailInput?.value.trim() || ""
+    const phoneRaw = phoneInput?.value.trim() || ""
+    const networkValue = networkSelect?.value || "airtel"
+
+    if (!firstName || !lastName) {
+      alert("Please enter your full name.")
+      return
+    }
+
+    if (!email || !isValidEmail(email)) {
+      alert("Please enter a valid email address.")
+      return
+    }
+
+    if (!phoneRaw || !isValidPhone(phoneRaw)) {
+      alert("Please enter a valid mobile money number.")
+      return
+    }
+
+    const networkLabel = networkValue === "mtn" ? "MTN Money" : "Airtel Money"
+    const phone = normalizePhone(phoneRaw)
+
+    const payment = pendingPayment
+    closePaymentModal()
+
+    payNow({
+      amount: payment.amount,
+      product: payment.product,
+      networkLabel,
+      customer: {
+        firstName,
+        lastName,
+        email,
+        phone
+      }
+    })
+  })
+}
 
 
     const menuToggle = document.getElementById("menu-toggle");

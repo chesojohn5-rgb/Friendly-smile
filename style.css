@@ -411,6 +411,21 @@ header {
   margin-bottom: 1rem;
 }
 
+.pay-now {
+  margin: 0 0 1.1rem 0.9rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pay-now:hover {
+  background: var(--brand-dark);
+}
+
 .badge {
   position: absolute;
   left: 10px;
@@ -624,6 +639,86 @@ header {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.payment-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+.payment-modal.show {
+  display: flex;
+}
+
+.payment-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 6, 10, 0.78);
+}
+
+.payment-modal__card {
+  position: relative;
+  width: min(520px, 92%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+.payment-modal__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.payment-modal__close:hover {
+  color: #fff;
+}
+
+.payment-modal__product {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-weight: 600;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.payment-form {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.payment-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.payment-field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.payment-field input,
+.payment-field select {
+  border: 1px solid var(--border);
+  background: #0b1220;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.68rem;
+  font: inherit;
 }
 
 @media (max-width: 980px) {
