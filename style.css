@@ -695,6 +695,12 @@ header {
   flex-wrap: wrap;
 }
 
+.payment-modal__note {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .payment-form {
   margin-top: 1rem;
   display: grid;
