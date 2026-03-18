@@ -87,6 +87,7 @@ const lastNameInput = document.getElementById("pay-last-name")
 const emailInput = document.getElementById("pay-email")
 const phoneInput = document.getElementById("pay-phone")
 const networkSelect = document.getElementById("pay-network")
+const amountInput = document.getElementById("pay-amount")
 const closeButtons = document.querySelectorAll("[data-modal-close]")
 
 let pendingPayment = null
@@ -97,6 +98,7 @@ const openPaymentModal = ({ amount, product }) => {
   pendingPayment = { amount, product }
   if (productNameEl) productNameEl.textContent = product
   if (amountEl) amountEl.textContent = `K${Number(amount).toFixed(2)}`
+  if (amountInput) amountInput.value = Number(amount).toFixed(2)
 
   paymentModal.classList.add("show")
   paymentModal.setAttribute("aria-hidden", "false")
@@ -139,6 +141,13 @@ payButtons.forEach((button) => {
 })
 
 if (paymentForm) {
+  if (amountInput && amountEl) {
+    amountInput.addEventListener("input", () => {
+      const value = Number(amountInput.value || 0)
+      amountEl.textContent = `K${value.toFixed(2)}`
+    })
+  }
+
   paymentForm.addEventListener("submit", (event) => {
     event.preventDefault()
 
@@ -152,6 +161,7 @@ if (paymentForm) {
     const email = emailInput?.value.trim() || ""
     const phoneRaw = phoneInput?.value.trim() || ""
     const networkValue = networkSelect?.value || "airtel"
+    const amountValue = Number(amountInput?.value || 0)
 
     if (!firstName || !lastName) {
       alert("Please enter your full name.")
@@ -168,6 +178,11 @@ if (paymentForm) {
       return
     }
 
+    if (!amountValue || amountValue <= 0) {
+      alert("Please enter a valid amount.")
+      return
+    }
+
     const networkLabel = networkValue === "mtn" ? "MTN Money" : "Airtel Money"
     const phone = normalizePhone(phoneRaw)
 
@@ -175,7 +190,7 @@ if (paymentForm) {
     closePaymentModal()
 
     payNow({
-      amount: payment.amount,
+      amount: amountValue,
       product: payment.product,
       networkLabel,
       customer: {
