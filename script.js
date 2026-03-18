@@ -1,12 +1,10 @@
 // ===== CONFIG =====
 
-// For LIVE backend (change this after deployment)
-const LIVE_URL = "https://your-backend-url.onrender.com/pay"
+const LOCAL_URL = "http://localhost:3000/pay"
+const LIVE_URL = "https://lenco-backend.onrender.com/pay"
 
-// Switch between LOCAL and LIVE
-const USE_LIVE = true   // 👉 change to true when deployed
+const USE_LIVE = true
 
-// Select the correct URL
 const API_URL = USE_LIVE ? LIVE_URL : LOCAL_URL
 
 
@@ -22,14 +20,13 @@ async function payNow() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        amount: 200   // 💰 change this dynamically later
+        amount: 200
       })
     })
 
     const data = await response.json()
 
     if (data.checkout_url) {
-      // Redirect user to Lenco payment page
       window.location.href = data.checkout_url
     } else {
       alert("Payment failed. No checkout URL received.")
@@ -44,6 +41,8 @@ async function payNow() {
   }
 
 }
+
+
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
     const backToTop = document.getElementById("back-to-top");
