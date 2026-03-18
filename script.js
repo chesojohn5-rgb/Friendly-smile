@@ -1,46 +1,79 @@
-// ===== CONFIG =====
+// ===== LENCO PAY CONFIG =====
 
-const LOCAL_URL = "http://localhost:3000/pay"
-const LIVE_URL = "https://lenco-backend.onrender.com/pay"
+const LENCO_PUBLIC_KEY = "REPLACE_WITH_YOUR_PUBLIC_KEY"
+const LENCO_CURRENCY = "ZMW"
+const LENCO_CHANNELS = ["card", "mobile-money"]
 
-const USE_LIVE = true
+const generateReference = () => {
+  const randomPart = Math.random().toString(36).slice(2, 8)
+  return `ref-${Date.now()}-${randomPart}`
+}
 
-const API_URL = USE_LIVE ? LIVE_URL : LOCAL_URL
+const isValidEmail = (value) => /\S+@\S+\.\S+/.test(value)
 
+const getCustomerEmail = () => {
+  const email = prompt("Enter your email to continue payment:")
+  if (!email || !isValidEmail(email)) {
+    alert("Please enter a valid email address.")
+    return null
+  }
+  return email.trim()
+}
 
 // ===== PAYMENT FUNCTION =====
 
-async function payNow() {
-
-  try {
-
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        amount: 200
-      })
-    })
-
-    const data = await response.json()
-
-    if (data.checkout_url) {
-      window.location.href = data.checkout_url
-    } else {
-      alert("Payment failed. No checkout URL received.")
-      console.log(data)
-    }
-
-  } catch (error) {
-
-    console.error("Error:", error)
-    alert("Something went wrong. Try again.")
-
+function payNow({ amount, product }) {
+  if (!window.LencoPay) {
+    alert("Lenco payment widget failed to load. Please refresh the page.")
+    return
   }
 
+  if (!LENCO_PUBLIC_KEY || LENCO_PUBLIC_KEY.includes("REPLACE_WITH")) {
+    alert("Payment is not configured yet. Add your Lenco public key.")
+    return
+  }
+
+  const email = getCustomerEmail()
+  if (!email) return
+
+  const reference = generateReference()
+
+  window.LencoPay.getPaid({
+    key: LENCO_PUBLIC_KEY,
+    reference,
+    email,
+    amount,
+    currency: LENCO_CURRENCY,
+    label: product || "Purchase",
+    channels: LENCO_CHANNELS,
+    onSuccess: function (response) {
+      const ref = response?.reference || reference
+      alert(`Payment complete! Reference: ${ref}`)
+      // TODO: Call your backend to verify payment using the reference.
+    },
+    onClose: function () {
+      alert("Payment was not completed, window closed.")
+    },
+    onConfirmationPending: function () {
+      alert("Your purchase will be completed when the payment is confirmed.")
+    }
+  })
 }
+
+const payButtons = document.querySelectorAll(".pay-now")
+payButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const amount = Number(button.dataset.amount || 0)
+    const product = button.dataset.product || "Purchase"
+
+    if (!amount) {
+      alert("Missing payment amount.")
+      return
+    }
+
+    payNow({ amount, product })
+  })
+})
 
 
     const menuToggle = document.getElementById("menu-toggle");
