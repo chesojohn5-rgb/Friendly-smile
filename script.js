@@ -3,6 +3,7 @@
 const LENCO_PUBLIC_KEY = "pub-745f8f2bf396d94aa61027044bc30fb861a59a61de987f67"
 const LENCO_CURRENCY = "ZMW"
 const LENCO_CHANNELS = ["mobile-money"]
+const DEFAULT_CUSTOMER_EMAIL_DOMAIN = "friendly-smile.com"
 const LOCAL_BACKEND = "http://localhost:3000"
 const LIVE_BACKEND = "https://lenco-backend.onrender.com"
 const USE_LIVE_BACKEND = true
@@ -13,9 +14,9 @@ const generateReference = () => {
   return `ref-${Date.now()}-${randomPart}`
 }
 
-const isValidEmail = (value) => /\S+@\S+\.\S+/.test(value)
 const normalizePhone = (value) => value.replace(/[^\d]/g, "")
 const isValidPhone = (value) => normalizePhone(value).length >= 7
+const buildCustomerEmail = (phone) => `customer-${phone}@${DEFAULT_CUSTOMER_EMAIL_DOMAIN}`
 
 // ===== PAYMENT FUNCTION =====
 
@@ -84,7 +85,6 @@ const productNameEl = document.getElementById("payment-product")
 const amountEl = document.getElementById("payment-amount")
 const firstNameInput = document.getElementById("pay-first-name")
 const lastNameInput = document.getElementById("pay-last-name")
-const emailInput = document.getElementById("pay-email")
 const phoneInput = document.getElementById("pay-phone")
 const networkSelect = document.getElementById("pay-network")
 const amountInput = document.getElementById("pay-amount")
@@ -158,18 +158,12 @@ if (paymentForm) {
 
     const firstName = firstNameInput?.value.trim() || ""
     const lastName = lastNameInput?.value.trim() || ""
-    const email = emailInput?.value.trim() || ""
     const phoneRaw = phoneInput?.value.trim() || ""
     const networkValue = networkSelect?.value || "airtel"
     const amountValue = Number(amountInput?.value || 0)
 
     if (!firstName || !lastName) {
       alert("Please enter your full name.")
-      return
-    }
-
-    if (!email || !isValidEmail(email)) {
-      alert("Please enter a valid email address.")
       return
     }
 
@@ -185,6 +179,7 @@ if (paymentForm) {
 
     const networkLabel = networkValue === "mtn" ? "MTN Money" : "Airtel Money"
     const phone = normalizePhone(phoneRaw)
+    const email = buildCustomerEmail(phone)
 
     const payment = pendingPayment
     closePaymentModal()
